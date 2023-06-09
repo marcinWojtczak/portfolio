@@ -1,12 +1,28 @@
 import Link from "next/link";
+import { FaFileDownload } from 'react-icons/fa'
 
 const Menu = () => {
 
   return (
     <nav className='h-full w-full flex md:flex-row flex-col items-center justify-center gap-6'>
-      <Link href='/'><p className='font-semibold'>O mnie</p></Link>
-      <Link href='projects'><p className='font-semibold'>Moje Projekty</p></Link>
-      <Link href='/'><p className='font-semibold'>Kontakt</p></Link>
+      <div className='flex items-center gap-2'>
+        <h6>01.</h6>
+        <Link href='/'><p className='hover:text-[#D9E1ED]'>O mnie</p></Link>
+      </div>
+      <div className='flex items-center'>
+        <h6>02.</h6>
+        <Link href='projects'><p className='hover:text-[#D9E1ED]'>Moje Projekty</p></Link>
+      </div>
+      <div className='flex items-center'>
+        <h6>02.</h6>
+        <Link href='/'><p className='hover:text-[#D9E1ED]'>Kontakt</p></Link>
+      </div>
+      <div className='flex items-center justify-center px-8 py-2 border-2 border-[#17899b] hover:bg-[#17899b] gap-2 rounded-sm shadow-xl'>
+        <button className='text-[#D9E1ED] font-mono'>
+          <h6>Moje CV</h6>
+        </button>
+        <FaFileDownload size={'20px'} color={'D9E1ED'}/>
+      </div>
     </nav>
   )
 }

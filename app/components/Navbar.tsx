@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <header className="flex justify-between items-center h-[80px] px-8 sm:px-20 w-full">
       <div>
-        <Link href='/'><h3 className='font-[600]'>Marcin Wojtczak</h3></Link>
+        <Link href='/'><h4 className='font-[400] text-[#D9E1ED]'>MW</h4></Link>
       </div>
       <div className="max-md:hidden">
         <Menu />

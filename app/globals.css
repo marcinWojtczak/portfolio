@@ -3,41 +3,49 @@
 @tailwind components;
 @tailwind utilities;
 
+
 *{
   box-sizing: border-box;
 }
 
 body {
-  padding:0;
+  padding: 0;
   margin: 0;
+  background-color: '#144552'
 }
 
 @layer base {
   h1 {
-    @apply text-4xl lg:text-6xl  
+    @apply text-4xl lg:text-5xl font-poppins font-bold text-[#D9E1ED]
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl 
+    @apply text-3xl sm:text-4xl font-poppins font-semibold text-[#ced4da]
   }
 
   h3 {
-    @apply text-2xl sm:text-3xl 
+    @apply text-2xl sm:text-3xl font-poppins
   }
 
   h4 {
-    @apply text-xl sm:text-2xl 
+    @apply text-xl sm:text-2xl font-poppins
   }
 
   h5 {
-    @apply text-xl
+    @apply text-[20px] sm:text-[18px] font-poppins text-[#D9E1ED] font-semibold
+  }
+
+
+  h6 {
+    @apply text-[12px] sm:text-[14px] font-mono tracking-wider text-[#00DDFF]
+
   }
 
   p {
-    @apply text-[14px] sm:text-[16px]
+    @apply text-[12px] sm:text-[14px] font-poppins tracking-wider text-[#ADB5BD]
   }
 
   li {
-    @apply cursor-pointer list-none text-[18px] sm:text-[20px]
+    @apply cursor-pointer list-disc text-[12px] sm:text-[14px] tracking-wider text-[#ADB5BD]
   }
 }
