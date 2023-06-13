@@ -28,13 +28,18 @@ body {
   }
 
   h4 {
-    @apply text-xl sm:text-2xl font-poppins
+    @apply text-xl sm:text-2xl font-poppins text-[#D9E1ED] font-semibold
   }
+
+  /* h5 {
+    @apply text-[18px] sm:text-[16px] font-poppins text-[#D9E1ED] font-semibold
+  } */
+
 
   h5 {
-    @apply text-[20px] sm:text-[18px] font-poppins text-[#D9E1ED] font-semibold
-  }
+    @apply text-[12px] sm:text-[14px] font-mono tracking-wider text-[#00DDFF]
 
+  }
 
   h6 {
     @apply text-[12px] sm:text-[14px] font-mono tracking-wider text-[#00DDFF]
@@ -46,6 +51,6 @@ body {
   }
 
   li {
-    @apply cursor-pointer list-disc text-[12px] sm:text-[14px] tracking-wider text-[#ADB5BD]
+    @apply cursor-pointer list-disc text-[12px] sm:text-[14px] font-mono tracking-wider text-[#00DDFF]
   }
 }

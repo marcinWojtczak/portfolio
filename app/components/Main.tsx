@@ -2,7 +2,7 @@ import Link  from 'next/link'
 
 const Main = () => {
   return (
-    <div className='lg:h-screen px-0 md:px-8 py-12 sm:py-20 w-[85%] sm:w-[75%] md:w-[68%] lg:w-[45%]'>
+    <div className='max-w-[850px] my-20 lg:my-0 lg:h-screen w-full flex flex-col items-center justify-center'>
       <div className='text-left flex flex-col gap-4'>
         <h6>Cześć, mam na imię</h6>
         <h1>Marcin Wojtczak.</h1>

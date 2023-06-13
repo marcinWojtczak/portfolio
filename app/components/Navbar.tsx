@@ -11,7 +11,7 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
-    <header className="flex justify-between items-center h-[80px] px-8 sm:px-20 w-full">
+    <header className="flex justify-between items-center h-[80px] px-6 sm:px-20 w-full">
       <div>
         <Link href='/'><h4 className='font-[400] text-[#D9E1ED]'>MW</h4></Link>
       </div>
