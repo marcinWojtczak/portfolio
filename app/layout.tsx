@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto_mono.variable} ${poppins.variable} bg-[#212F45] h-screen` }>
+      <body className={`${roboto_mono.variable} ${poppins.variable} bg-[#212F45]` }>
         <Navbar />
         {children}
       </body>

@@ -24,20 +24,15 @@ body {
   }
 
   h3 {
-    @apply text-2xl sm:text-3xl font-poppins
+    @apply text-2xl sm:text-3xl font-poppins text-[#D9E1ED] font-semibold
   }
 
   h4 {
     @apply text-xl sm:text-2xl font-poppins text-[#D9E1ED] font-semibold
   }
 
-  /* h5 {
-    @apply text-[18px] sm:text-[16px] font-poppins text-[#D9E1ED] font-semibold
-  } */
-
-
   h5 {
-    @apply text-[12px] sm:text-[14px] font-mono tracking-wider text-[#00DDFF]
+    @apply text-[14px] sm:text-[16px] font-poppins tracking-wider text-[#D9E1ED]
 
   }
 
@@ -52,5 +47,9 @@ body {
 
   li {
     @apply cursor-pointer list-disc text-[12px] sm:text-[14px] font-mono tracking-wider text-[#00DDFF]
+  }
+
+  .costume-placeholder::placeholder {
+    @apply font-mono text-[14px] text-[#D9E1ED] font-extralight
   }
 }

@@ -17,7 +17,8 @@ module.exports = {
       fontFamily: {
         poppins: "var(--font-poppins)",
         mono: "var(--font-roboto_mono)",
-      }
+      },
+    
     },
   },
   plugins: [],
