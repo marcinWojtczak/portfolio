@@ -2,6 +2,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, useInView, } from 'framer-motion';
+import myPhoto from '../../public/marcin1.jpg'
 
 
 
@@ -82,7 +83,7 @@ const About: React.FC = () => {
             >
               {isHover ? (
                 <Image 
-                  src='/marcin1.png' 
+                  src={myPhoto} 
                   alt='marcin img'
                   width={464}
                   height={597}
@@ -90,7 +91,7 @@ const About: React.FC = () => {
                 />
                 ) : (
                 <Image 
-                  src='/marcin1.png' 
+                  src={myPhoto} 
                   alt='marcin img'
                   width={464}
                   height={597}
