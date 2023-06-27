@@ -1,8 +1,8 @@
 "use client"
 import React, { useState, FormEvent, ChangeEvent, useEffect, useRef  } from 'react';
 import { sendContactForm } from '../../lib/api';
-import { FaPhone } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
+import { FaPhone } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import Footer from './Footer';
 import { motion, useAnimation, useInView, } from 'framer-motion';
 
