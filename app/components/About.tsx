@@ -2,7 +2,7 @@
 import React,{ useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, useInView, } from 'framer-motion';
-import myPhoto from '../../public/marcin1.jpg'
+import myImg from '../../public/myImg.png'
 
 
 
@@ -65,7 +65,7 @@ const About: React.FC = () => {
             <div className='flex flex-col col-span-3 gap-1'>
               <p className='text-[#D9E1ED]'>Zainteresowania</p>
               <div className='flex flex-wrap gap-4'>
-                <ul className='w-full list-inside grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-2'>
+                <ul className='w-full list-inside grid grid-cols-2 2xl:grid-cols-3 gap-x-4 gap-y-2'>
                   <li className='cursor-default'>Nba</li>
                   <li className='cursor-default'>Historia II Wojny Światowej</li>
                   <li className='cursor-default'>Sport</li>
@@ -83,7 +83,7 @@ const About: React.FC = () => {
             >
               {isHover ? (
                 <Image 
-                  src={myPhoto} 
+                  src={myImg} 
                   alt='marcin img'
                   width={464}
                   height={597}
@@ -91,7 +91,7 @@ const About: React.FC = () => {
                 />
                 ) : (
                 <Image 
-                  src={myPhoto} 
+                  src={myImg} 
                   alt='marcin img'
                   width={464}
                   height={597}
