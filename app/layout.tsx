@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className='scroll-smooth'>
       <body className={`${roboto_mono.variable} ${poppins.variable} bg-[#212F45]` }>
         <Navbar />
         {children}

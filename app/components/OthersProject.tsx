@@ -3,8 +3,19 @@ import React, { useState } from 'react';
 import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi';
 import Link from 'next/link'
 
-const OthersPorject = ({title, description, tech, link}) => {
+interface OthersProjectProps {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+}
 
+const OthersProject: React.FC<OthersProjectProps> = ({
+  title, 
+  description, 
+  tech, 
+  link
+}) => {
   const [isHover, setIsHover] = useState(false)
 
   return (
@@ -36,4 +47,4 @@ const OthersPorject = ({title, description, tech, link}) => {
   )
 }
 
-export default OthersPorject
+export default OthersProject

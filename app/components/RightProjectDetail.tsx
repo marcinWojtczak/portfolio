@@ -1,10 +1,27 @@
 "use client"
-import React, { useState } from 'react'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
-import Image from 'next/image';
-import Link from 'next/link'
+import React, { useState } from 'react';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
-const RightProjectDetail = ({title, backgroundImg, subtitle, description, tech, link}) => {
+
+interface RightProjectDetailProps {
+  title: string;
+  backgroundImg: StaticImageData ;
+  subtitle: string;
+  description: string;
+  tech: string[];
+  link: string;
+}
+
+const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
+  title, 
+  backgroundImg, 
+  subtitle, 
+  description, 
+  tech, 
+  link
+}) => {
 
   const [isHover, setIsHover] = useState(false)
 
@@ -47,7 +64,7 @@ const RightProjectDetail = ({title, backgroundImg, subtitle, description, tech, 
       </div>
       <div className='basis-[40%] flex flex-col text-right relative gap-4'>
         <h4 className='basis-1/3 flex justify-end items-end'>{title}</h4>
-        <div className='basis-2/3 xl:absolute xl:w-[400px] right-0 top-[40%] flex flex-col gap-4 items-end'>
+        <div className='basis-2/3 xl:absolute xl:w-[500px] right-0 top-[40%] flex flex-col gap-4 items-end'>
           <p className='bg-[#233a5e] p-4 shadow-[3px_3px_10px_5px_#1a202c]'>{description}</p>
           <h6>{tech.join(', ')}</h6>
           <div className="flex gap-2">

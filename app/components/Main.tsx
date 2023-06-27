@@ -1,20 +1,44 @@
-"use client"
+'use client'
 import Link  from 'next/link';
+import React,{ useState, useEffect, useRef } from 'react';
+import { motion, useAnimation, useInView, } from 'framer-motion';
 
-const Main = () => {
+const Main: React.FC = () => {
+
+  const [isHover, setIsHover] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
+  const animation = useAnimation();
+
+  useEffect(() => {
+    console.log(isInView)
+    if(isInView){
+      animation.start("visible");
+    }
+  },[isInView])
+
   return (
-    <div className='max-w-[850px] my-20 lg:my-0 lg:h-screen w-full flex flex-col items-center justify-center'>
-      <div className='text-left flex flex-col gap-4'>
+    <motion.div 
+      ref={ref}
+      initial="hidden"
+      animate={animation}
+      variants={{
+        hidden: { opacity: 0, y: 100},
+        visible: { opacity: 1, y: 0},
+      }}
+      transition={{ duration: 0.2, delay: 0.2, bounce: 0.2, type: 'spring' }}
+      className='max-w-[850px] xl:max-w-[950px] h-screen w-full text-center '>
+      <div className='flex flex-col justify-center text-start gap-4 w-full h-full mx-auto '>
         <h6>Cześć, mam na imię</h6>
         <h1>Marcin Wojtczak.</h1>
         <h2>Jestem początkującym developerem.</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, optio! Delectus consequatur quas commodi repudiandae facere accusantium cum similique et deleniti voluptatibus facilis veniam, odit minima.
+        <p>Ponad 2 lata temu postanowiłem zmienić ścieżkę kariery i skupić się na nauce programowania. Od momentu podjęcia decyzji o zmianie kariery poświęciłem mnóstwo czasu na naukę i doskonalenie umiejętności programistycznych.
         </p>
         <div className='w-fit px-8 py-2 border-2 border-[#17899b] rounded-sm shadow-xl hover:bg-[#17899b]'>
-          <Link href='project'><h6>Moje Projekty</h6></Link>
+          <Link href='#projects'><h6>Moje Projekty</h6></Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

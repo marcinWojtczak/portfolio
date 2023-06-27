@@ -8,11 +8,9 @@ const HomePage = () => {
   return (
       <div className='w-full flex flex-col items-center justify-center px-6 gap-[300px]'>
         <Main />
-        <div className='flex flex-col gap-[200px]'>
-          <About />
-          <MyProject />
-          <Contact />
-        </div>
+        <About />
+        <MyProject />
+        <Contact />
       </div>
   )
 }

@@ -5,13 +5,13 @@
 
 
 *{
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 body {
   padding: 0;
   margin: 0;
-  background-color: '#144552'
+  background-color: '#144552';
 }
 
 @layer base {

@@ -7,7 +7,7 @@ import { RiCloseFill } from "react-icons/ri"
 import { motion } from "framer-motion"
 
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
 

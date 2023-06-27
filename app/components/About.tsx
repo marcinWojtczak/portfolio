@@ -1,46 +1,37 @@
 "use client"
 import React,{ useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView, } from 'react-intersection-observer'
+import { motion, useAnimation, useInView, } from 'framer-motion';
 
 
 
-const About = () => {
+
+const About: React.FC = () => {
   
-  const [isHover, setIsHover] = useState(false)
-  const {ref, inView} = useInView()
+  const [isHover, setIsHover] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true })
   const animation = useAnimation();
 
   useEffect(() => {
-    console.log(inView)
-    if(inView){
-      animation.start({
-        x: 0,
-        transition: {
-          duration: 0.5, bounce: 0.3, type: 'spring' 
-        }
-      })
+    console.log(isInView)
+    if(isInView){
+      animation.start("visible");
     }
-    console.log(inView)
-    if(!inView){
-      animation.start({x: '-100vw'})
-    }
-  },[inView])
+  },[isInView])
   
 
   return (
       <motion.div 
-        // variants={{
-        //   hidden: { opacity: 0, y: 100},
-        //   visible: { opacity: 1, y: 0},
-        // }}
-        // initial="hidden"
-        // animate={animation}
-        // transition={{ duration: 0.5, bounce: 0.3, type: 'spring' }}
-        // animate={animation}
-        // ref={ref}
-        className='max-w-[850px] my-20 lg:my-0 w-full flex flex-col gap-4 justify-center'>
+        ref={ref}
+        initial="hidden"
+        animate={animation}
+        variants={{
+          hidden: { opacity: 0, y: 100},
+          visible: { opacity: 1, y: 0},
+        }}
+        transition={{ duration: 0.2, delay: 0.2, bounce: 0.2, type: 'spring' }}
+        className='max-w-[850px] xl:max-w-[950px] my-20 lg:my-0 w-full flex flex-col gap-4 justify-center scroll-mt-6' id='about'>
         <div className='flex items-center gap-2'>
           <h5 className='font-mono tracking-wider text-[#00DDFF]'>01.</h5>
           <h2>O mnie</h2>
@@ -48,11 +39,9 @@ const About = () => {
         </div>
         <div className='flex flex-col sm:flex-row gap-4'>
           <div className='order-2 sm:basis-2/3 sm:order-1 flex flex-col gap-4'>
-            <p>
-            I'm a former personal trainer, beginner developer. I have decided to change my
-            career path and I have been committed to that idea totally since the last 2 years.
-            Now, after finishing several courses and completing a few independent projects I
-            am ready to undertake an entry-level job.
+            <p>Obecnie pracuję jako trenere personalny, ale od ponad 2 lat każdą wolną chwile poświęcam na nauce programowania. Głównie skupiam się na Pythonie i JavaScriptcie. 
+            </p>
+            <p>Moje doświadczenie jako trener personalny nauczyło mnie, jak być cierpliwym, konsekwentnym i skupionym na celu. Teraz te umiejętności przenoszę do świata programowania.
             </p>
             <div className='flex flex-col col-span-3 gap-1'>
               <p className='text-[#D9E1ED]'>Technologie kótrych używam</p>
@@ -77,9 +66,10 @@ const About = () => {
               <div className='flex flex-wrap gap-4'>
                 <ul className='w-full list-inside grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-2'>
                   <li className='cursor-default'>Nba</li>
-                  <li className='cursor-default'>II WW</li>
-                  <li className='cursor-default'>Military</li>
-                  <li className='cursor-default'>Travel</li>
+                  <li className='cursor-default'>Historia II Wojny Światowej</li>
+                  <li className='cursor-default'>Sport</li>
+                  <li className='cursor-default'>Podróże</li>
+                  <li className='cursor-default'>Gotowanie</li>
                 </ul>
               </div>
             </div>
