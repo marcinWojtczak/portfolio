@@ -6,11 +6,13 @@ import MyProject from './components/MyProject';
 
 const HomePage = () => {
   return (
-      <div className='w-full flex flex-col items-center justify-center px-6 gap-[300px]'>
+      <div className='w-full flex flex-col items-center justify-center px-6 gap-20'>
         <Main />
-        <About />
-        <MyProject />
-        <Contact />
+        <div className='f-full flex flex-col gap-40'>
+          <About />
+          <MyProject />
+          <Contact />
+        </div>
       </div>
   )
 }

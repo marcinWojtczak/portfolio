@@ -61,6 +61,19 @@ const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
           </div>
         )
         }
+        <div className='w-full h-full flex flex-col gap-4 p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c]'>
+            <div className='basis-1/4 flex flex-col xl:items-center'>
+              <h4>{title}</h4>
+              <p>{subtitle}</p>
+            </div>
+            <Image
+              src={backgroundImg}
+              alt='Travel img'
+              width={1920}
+              height={671}
+              style={{objectFit: "cover", borderBottomRightRadius: '6px', borderBottomLeftRadius: '6px', height: '250px', flexBasis: '3/4'}}
+            />
+          </div>
       </div>
       <div className='basis-[40%] flex flex-col text-right relative gap-4'>
         <h4 className='basis-1/3 flex justify-end items-end'>{title}</h4>
@@ -69,10 +82,10 @@ const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
           <h6>{tech.join(', ')}</h6>
           <div className="flex gap-2">
             <Link href={link} target='_blank'>
-              <FiGithub style={{ textAlign: 'right', color: '#D9E1ED'}}/>
+              <FiGithub style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '25px'}}/>
             </Link>
             <Link href=''>
-              <FiExternalLink style={{ textAlign: 'right', color: '#D9E1ED'}} />
+              <FiExternalLink style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '25px'}} />
             </Link>
           </div>
         </div>

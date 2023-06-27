@@ -35,10 +35,10 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
           <h6>{tech.join(', ')}</h6>
           <div className="flex gap-2">
             <Link href={link} target='_blank'>
-              <FiGithub style={{ textAlign: 'right', color: '#D9E1ED'}}/>
+              <FiGithub style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '25px'}}/>
             </Link>
             <Link href=''>
-              <FiExternalLink style={{ color: '#D9E1ED'}} />
+              <FiExternalLink style={{ color: '#D9E1ED', fontSize: '25px'}} />
               </Link>
           </div>
         </div>

@@ -44,8 +44,19 @@ const Contact: React.FC  = () => {
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setFormData(prevFormData => ({
+      ...formData,
+    }));
     
-    await sendContactForm(formData);
+    try {
+      await sendContactForm(values);
+      setFormData()
+    } catch (error) {
+      setFormData(prevState => ({
+        ...prevState,
+        error:error.message,
+      }))
+    }
   }
 
   return (

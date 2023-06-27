@@ -4,7 +4,7 @@ import Menu from './Menu'
 import { useState } from "react";
 import { HiMenu } from "react-icons/hi"
 import { RiCloseFill } from "react-icons/ri"
-import { motion } from "framer-motion"
+
 
 
 const Navbar: React.FC = () => {
@@ -20,22 +20,25 @@ const Navbar: React.FC = () => {
         <Menu />
       </div>
       <div className="md:hidden">
-        <HiMenu onClick={() => setToggleMenu(toggleMenu => !toggleMenu)}/>
+        <HiMenu 
+          style={{ color: 'white', fontSize: '25px'}}
+          onClick={() => setToggleMenu(toggleMenu => !toggleMenu)}/>
         {toggleMenu ? (
-          <div className='fixed top-0 right-0 bg-[red] h-full w-[50%] sm:w-[40%] ease-in duration-500'>
-            <div className='p-2'>
-              <RiCloseFill 
-                size={'25px'} 
+          <div className='fixed top-0 right-0 bg-[#233a5e] h-full w-[70%] sm:w-[40%] ease-in duration-500 z-50 shadow-[3px_3px_10px_5px_#1a202c]'>
+            <div className='py-6 px-4'>
+              <RiCloseFill  
+                style={{ color: 'white', fontSize: '25px'}}
                 onClick={() => setToggleMenu(toggleMenu => !toggleMenu)}
               />
             </div>
             <Menu />
           </div>
       ) :
-        <div className='fixed top-0 right-[-1000px] bg-[red] h-full w-[40%] ease-in duration-500 '>
-          <div className='p-2'>
+        <div className='fixed top-0 right-[-1000px] bg-[#233a5e] h-full w-[40%] ease-in duration-500 z-50 shadow-[3px_3px_10px_5px_#1a202c]'>
+          <div className='py-6 px-4'>
             <RiCloseFill 
-              size={'25px'} 
+              size={'25px'}
+              style={{ color: 'white'}} 
               onClick={() => setToggleMenu(toggleMenu => !toggleMenu)}
             />
           </div>
