@@ -1,14 +1,13 @@
 "use client"
-import React, { useState, FormEvent, ChangeEvent, useEffect, useRef  } from 'react';
-import { sendContactForm } from '../../lib/api';
+import React, { useEffect, useRef  } from 'react';
 import { FaPhone } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import Footer from './Footer';
 import { motion, useAnimation, useInView, } from 'framer-motion';
+import Form from './Form' 
 
 const Contact: React.FC  = () => {
 
-  const [isHover, setIsHover] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true })
   const animation = useAnimation();
@@ -20,44 +19,6 @@ const Contact: React.FC  = () => {
     }
   },[isInView])
 
-  const [formData, setFormData] = useState<{
-    name: string,
-    email: string,
-    subject: string,
-    message: string
-  }>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  }) 
-  
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prevFormData => {
-      return {
-        ...formData,
-        [e.target.name]: e.target.value
-      }
-    })
-  }
-
-  const onSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setFormData(prevFormData => ({
-      ...formData,
-    }));
-    
-    try {
-      await sendContactForm(values);
-      setFormData()
-    } catch (error) {
-      setFormData(prevState => ({
-        ...prevState,
-        error:error.message,
-      }))
-    }
-  }
 
   return (
     <motion.div
@@ -90,55 +51,7 @@ const Contact: React.FC  = () => {
             <p>marcinwojtczak.pure@gmail.com</p>
           </div>
         </div>
-        <form 
-          
-          onSubmit={onSubmit}
-          method="POST"
-          className='py-10 flex flex-col items-center basis-1/2'>
-          <input 
-            type='text' 
-            name='name' 
-            value={formData.name}
-            onChange={handleChange}
-            placeholder='Name' 
-            autoComplete='on' 
-            required 
-            className='border border-[#233a5e] rounded-sm outline-0 bg-[#212F45] py-1 pl-2 w-full mb-6 costume-placeholder text-[#D9E1ED]'
-          />
-          <input 
-            type='email' 
-            name='email'
-            value={formData.email} 
-            onChange={handleChange}
-            placeholder='Email' 
-            autoComplete='on' 
-            required 
-            className='border border-[#233a5e] rounded-sm outline-0 bg-[#212F45] py-1 pl-2 w-full  mb-6 costume-placeholder text-[#D9E1ED]'
-          />
-          <input 
-            type='text' 
-            name='subject'
-            value={formData.subject} 
-            onChange={handleChange}
-            placeholder='Subject' 
-            autoComplete='on' 
-            className='border border-[#233a5e] rounded-sm outline-0 bg-[#212F45] py-1 pl-2 w-full  mb-6 costume-placeholder text-[#D9E1ED]'
-          />
-          <textarea
-            rows={10}
-            name='message' 
-            value={formData.message}
-            onChange={handleChange}
-            placeholder='Message' 
-            required 
-            className='border border-[#233a5e] rounded-sm outline-0 bg-[#212F45] py-1 pl-2 w-full  mb-6 costume-placeholder text-[#D9E1ED] '
-          ></textarea>
-          <div className='flex justify-start w-full '>
-            <button 
-              type='submit'
-              className='font-mono w-full px-8 py-2 border-2 border-[#17899b] hover:bg-[#17899b] rounded-sm shadow-xl text-[#00DDFF]'>Wyślij</button>
-          </div>
-        </form>
+        <Form />
       </div>
       <Footer />
     </motion.div>

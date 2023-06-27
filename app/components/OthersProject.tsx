@@ -41,7 +41,7 @@ const OthersProject: React.FC<OthersProjectProps> = ({
         }
         <p>{description}</p>
       </div>
-      <h6>{tech.join(', ')}</h6>
+      <h6 >{tech.join(', ')}</h6>
     </div>
   
   )
