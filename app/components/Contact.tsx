@@ -80,6 +80,7 @@ const Contact: React.FC  = () => {
           </div>
         </div>
         <form 
+          
           onSubmit={onSubmit}
           method="POST"
           className='py-10 flex flex-col items-center basis-1/2'>
