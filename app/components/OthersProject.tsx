@@ -25,14 +25,9 @@ const OthersProject: React.FC<OthersProjectProps> = ({
     >
       <div className='flex justify-between items-center'>
         <FiFolder style={{ fontSize: '26px', color: '#00DDFF'}}/>
-        <div className='flex items-center gap-2'>
         <Link href='' target='_blank'>
           <FiGithub style={{ color: '#D9E1ED'}}/>
         </Link>
-        <Link href=''>
-          <FiExternalLink style={{color: '#D9E1ED'}} />
-        </Link>
-        </div>
       </div>
       <div className='flex flex-col gap-2'>
         {!isHover 

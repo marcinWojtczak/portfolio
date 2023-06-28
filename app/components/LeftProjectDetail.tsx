@@ -35,11 +35,11 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
           <h6>{tech.join(', ')}</h6>
           <div className="flex gap-2">
             <Link href={link} target='_blank'>
-              <FiGithub style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '25px'}}/>
+              <FiGithub style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '18px'}}/>
             </Link>
             <Link href=''>
-              <FiExternalLink style={{ color: '#D9E1ED', fontSize: '25px'}} />
-              </Link>
+              <FiExternalLink style={{ color: '#D9E1ED', fontSize: '18px'}} />
+            </Link>
           </div>
         </div>
       </div>
@@ -48,8 +48,8 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
         onMouseLeave={() => setIsHover(false)}
       >
         {!isHover ? (
-          <div className='w-full h-full flex flex-col gap-4 bg-[#205b64] p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] z-100 order-2'>
-            <div className='basis-1/4 flex flex-col xl:items-center mix-blend-overlay'>
+          <div className='w-full h-full flex flex-col gap-4 bg-[#17899b] p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] z-100 order-2'>
+            <div className='basis-1/4 flex flex-col xl:items-center gap-2'>
               <h4>{title}</h4>
               <p>{subtitle}</p>
             </div>
@@ -58,12 +58,12 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
               alt='Blog img'
               width={1920}
               height={671}
-              style={{objectFit: "cover", borderBottomRightRadius: '6px', borderBottomLeftRadius: '6px', height: '250px', flexBasis: '3/4', mixBlendMode: 'multiply'}}
+              style={{objectFit: "cover", height: '300px', flexBasis: '3/4', mixBlendMode: 'multiply'}}
             />
           </div>
         ) : (
           <div className='w-full h-full flex flex-col gap-4 p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] z-100 order-2'>
-            <div className='basis-1/4 flex flex-col xl:items-center'>
+            <div className='basis-1/4 flex flex-col xl:items-center gap-2'>
               <h4>{title}</h4>
               <p>{subtitle}</p>
             </div>
@@ -72,11 +72,12 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
               alt='Travel img'
               width={1920}
               height={671}
-              style={{objectFit: "cover", borderBottomRightRadius: '6px', borderBottomLeftRadius: '6px', height: '250px', flexBasis: '3/4'}}
+              style={{objectFit: "cover", borderBottomRightRadius: '6px', borderBottomLeftRadius: '6px', height: '300px', flexBasis: '3/4'}}
             />
           </div>
         )
         }
+        
       </div>
     </div>
   )

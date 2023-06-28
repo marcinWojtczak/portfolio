@@ -27,8 +27,8 @@ const Main: React.FC = () => {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.2, delay: 0.2, bounce: 0.2, type: 'spring' }}
-      className='max-w-[850px] xl:max-w-[950px] min-h-screen w-full text-center '>
-      <div className='flex flex-col justify-center text-start gap-4 h-[85vh]'>
+      className='max-w-[850px] xl:max-w-[950px] h-[85vh] w-full text-center '>
+      <div className='flex flex-col justify-center text-start gap-4 h-full'>
         <h6>Cześć, mam na imię</h6>
         <h1>Marcin Wojtczak.</h1>
         <h2>Jestem początkującym developerem.</h2>

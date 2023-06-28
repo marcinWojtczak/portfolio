@@ -60,7 +60,7 @@ const MyProject: React.FC = () => {
           link='https://github.com/marcinWojtczak/travel-places'
         />
         <LeftProjectDetail 
-          title='Django Blog'
+          title='NBA Blog'
           backgroundImg={BasketballImage}
           subtitle='Blog o tematyce NBA'
           description='Aplikacja oferuje kilka funkcjonalności takich jak: rejestracja konta użytkownika, tworzenie, edycja i usuwanie postów, dodawanie komentarzy. Aplikacja umożliwia również dodawanie filmów do postów oraz wyszukiwania postów na podstawie tytułu lub zawartości.'
@@ -91,13 +91,13 @@ const MyProject: React.FC = () => {
         <OthersProject 
           title='Camper-rental'
           description='Strona internetowa wypożyczalni camperów to platforma, która umożliwia użytkownikom wynajem i rezerwację kamperów na różne okazje, takie jak podróże, wypady na kemping, festiwale czy wakacje rodzinne..'
-          link='https://github.com/marcinWojtczak/portfolio'
+          link='https://github.com/marcinWojtczak/camper-rental'
           tech={['JavaScript', 'React Js']}
         />
         <OthersProject 
           title='Exercise-note'
           description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id voluptates non nesciunt in laboriosam dolore esse iusto sunt quidem minima, doloribus quis nulla sapiente debitis.'
-          link='https://github.com/marcinWojtczak/portfolio'
+          link='https://github.com/marcinWojtczak/exercise-note'
           tech={['JavaScript', 'TypeScriot', 'Css']}
         />
       </div>
