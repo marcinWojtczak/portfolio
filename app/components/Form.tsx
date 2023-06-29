@@ -32,11 +32,11 @@ const Form = () => {
     e.preventDefault()
     setIsSubmit(true)
 
-    AWS.config.update({
-      // accessKeyId: process.env.AWS_SECRET_ACCESS_KEY,
-      // secretAccessKey: process.env.AWS_ACCESS_KEY_ID,
-      region: 'eu-central-1',
-    });
+    // AWS.config.update({
+    //   accessKeyId: praws_access_key_id,
+    //   secretAccessKey: process.env.AWS_ACCESS_KEY_ID,
+    //   region: 'eu-central-1',
+    // });
 
     const ses = new AWS.SES({  region: 'eu-central-1'  });
 
