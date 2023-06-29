@@ -1,11 +1,5 @@
 import AWS from 'aws-sdk';
 
-const CONTACT_MESSAGE_FIELDS = {
-  name: 'Name',
-  email: "Email",
-  subject: "Subject",
-  message: "Message",
-}
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCES_KEY,
