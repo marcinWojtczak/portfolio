@@ -1,8 +1,6 @@
 'use Client';
 import React, { useState, FormEvent, ChangeEvent  } from 'react';
 import AWS from 'aws-sdk'
-import { sendEmail } from '../api/contact/route'
-
 
 const Form = () => {
 
@@ -33,7 +31,34 @@ const Form = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmit(true)
-    sendEmail(formData)
+
+    AWS.config.update({
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      region: 'eu-central-1',
+    });
+
+    const ses = new AWS.SES({  region: 'eu-central-1'  });
+
+    const params = {
+    Destination: {
+      ToAddresses: [process.env.EMAIL], 
+    },
+    Message: {
+      Body: {
+        Text: { Data: formData.message },
+      },
+        Subject: { Data: formData.subject },
+      },
+    Source: process.env.EMAIL, 
+  };
+
+  try {
+      await ses.sendEmail(params).promise();
+      console.log('Email sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   }
 
   return (
