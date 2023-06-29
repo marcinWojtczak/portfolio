@@ -33,8 +33,8 @@ const Form = () => {
     setIsSubmit(true)
 
     AWS.config.update({
-      accessKeyId: 'AKIA3EJLSFWX7CWM6ZGR',
-      secretAccessKey: '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',
+      accessKeyId: process.env.AWS_SECRET_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_ACCESS_KEY_ID,
       region: 'eu-central-1',
     });
 
