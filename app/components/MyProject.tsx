@@ -15,7 +15,8 @@ interface Props {
   subtitle: string;
   description: React.ReactNode;
   tech: string[];
-  link: string;
+  githubLink: string;
+  vercelLink: string;
 }
 
 
@@ -57,7 +58,8 @@ const MyProject: React.FC = () => {
           subtitle='Aplikacja w której można sprawdzić atrakcje turystyczne, lokale gastonomiczne, hotele, oraz pogodę w wybranej przez nas lokalizacji.'
           description='W mojej aplikacji wykorzystałem kilka zewnętrznych API, aby zapewnić dodatkowe funkcjonalności takie jak: wyświetlania interaktywnej mapy na stronie, pobierania danych na temat atrakcji turystycznych, lokali gastronomicznych i hoteli oraz do wyświetlania informacji o pogodzie w danej lokalizacji'
           tech={['JavaScript', 'React Js', 'RTK Query', 'Tailwind']}
-          link='https://github.com/marcinWojtczak/travel-places'
+          githubLink='https://github.com/marcinWojtczak/travel-places'
+          vercelLink='https://travel-places-dvo1aor8o-marcinwojtczak.vercel.app/'
         />
         <LeftProjectDetail 
           title='NBA Blog'
@@ -65,7 +67,8 @@ const MyProject: React.FC = () => {
           subtitle='Blog o tematyce NBA'
           description='Aplikacja oferuje kilka funkcjonalności takich jak: rejestracja konta użytkownika, tworzenie, edycja i usuwanie postów, dodawanie komentarzy. Aplikacja umożliwia również dodawanie filmów do postów oraz wyszukiwania postów na podstawie tytułu lub zawartości.'
           tech={['Django', 'Python', 'PostgreSQl', 'Bootstrap']}
-          link='https://github.com/marcinWojtczak/django-nbablog'
+          githubLink='https://github.com/marcinWojtczak/django-nbablog'
+          vercelLink='https://django-nbablog.vercel.app/'
         />
         <RightProjectDetail 
           title='Crypto App'
@@ -73,7 +76,9 @@ const MyProject: React.FC = () => {
           subtitle='Aplikacja Poświęcona Tematyce Krypto Walut'
           description='Aplikacja dostarcza użytkownikom aktualne dane z rynku kryptowalut. Wyświetla aktualne cen, dostarcza również użytkownikom szczegółowe informacje na temat poszczególnych kryptowalut oraz wykresy cen dla wybranych kryptowalut, umożliwiając użytkownikom analizę zmian cen w różnych okresach czasu'
           tech={['JavaScript', 'React Js', 'CSS',]}
-          link='https://github.com/marcinWojtczak/cryptocurrency-website'
+          githubLink='https://github.com/marcinWojtczak/cryptocurrency-website'
+          vercelLink='https://portfolio-sage-tau-31.vercel.app/'
+
         />
       </div>
       <div className='mt-20 mb-4 flex items-center gap-2'>
@@ -85,19 +90,19 @@ const MyProject: React.FC = () => {
         <OthersProject 
           title='Portfolio'
           description='Przedstawia umiejętności i doświadczenia zawodoweg oraz projekty realizowane w różnych technologiach. Portfolio zawiera sekcję kontaktową, która zawiera dane kontaktowe, takie jak adres e-mail, numer telefonu lub linki do profili na platformach społecznościowych. '
-          link='https://github.com/marcinWojtczak/portfolio'
+          githubLink='https://github.com/marcinWojtczak/portfolio'
           tech={['JavaScript', 'Next Js', 'Tailwind']}
         />
         <OthersProject 
           title='Camper-rental'
           description='Strona internetowa wypożyczalni camperów to platforma, która umożliwia użytkownikom wynajem i rezerwację kamperów na różne okazje, takie jak podróże, wypady na kemping, festiwale czy wakacje rodzinne..'
-          link='https://github.com/marcinWojtczak/camper-rental'
+          githubLink='https://github.com/marcinWojtczak/camper-rental'
           tech={['JavaScript', 'React Js']}
         />
         <OthersProject 
           title='Exercise-note'
           description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id voluptates non nesciunt in laboriosam dolore esse iusto sunt quidem minima, doloribus quis nulla sapiente debitis.'
-          link='https://github.com/marcinWojtczak/exercise-note'
+          githubLink='https://github.com/marcinWojtczak/exercise-note'
           tech={['JavaScript', 'TypeScriot', 'Css']}
         />
       </div>

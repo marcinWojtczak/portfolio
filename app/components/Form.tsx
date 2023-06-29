@@ -1,6 +1,8 @@
 'use Client';
 import React, { useState, FormEvent, ChangeEvent  } from 'react';
-import { sendContactForm } from '../../lib/api';
+// import { sendContactForm } from '../../lib/api';
+import AWS from 'aws-sdk'
+import { sendEmail } from '../api/contact/route'
 
 
 const Form = () => {
@@ -29,29 +31,17 @@ const Form = () => {
     })
   }
 
-  const onSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmit(true)
-    setFormData(prevFormData => ({
-      ...formData,
-    }));
-    
-    try {
-      await sendContactForm(formData);
-      setFormData(formData)
-    } catch (error) {
-      setFormData(prevState => ({
-        ...prevState,
-        error:error.message,
-      }))
-    }
+    sendEmail(formData)
   }
 
   return (
     <>
       { !isSubmit ? (
         <form
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
           method="POST"
           className='py-10 flex flex-col items-center basis-1/2'
         >

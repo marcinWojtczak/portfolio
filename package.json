@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "@types/nodemailer": "^6.4.8",
     "autoprefixer": "10.4.14",
+    "aws-sdk": "^2.1407.0",
     "framer-motion": "^10.12.16",
     "next": "13.4.4",
-    "nodemailer": "^6.9.3",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",

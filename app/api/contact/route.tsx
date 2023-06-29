@@ -1,5 +1,4 @@
-import { mailOptions, transporter } from "../../config/nodemailer";
-import { NextRequest, NextResponse } from 'next/server';
+import AWS from 'aws-sdk';
 
 const CONTACT_MESSAGE_FIELDS = {
   name: 'Name',
@@ -8,40 +7,33 @@ const CONTACT_MESSAGE_FIELDS = {
   message: "Message",
 }
 
-const generateEmailContent = (data) => {
-  const stringData = Object.entries(data).reduce((str, [key, value]) => 
-    (str += `${CONTACT_MESSAGE_FIELDS[key]} : \n${value} \n \n`), 
-    ""
-  );
+AWS.config.update({
+  accessKeyId: 'AKIA3EJLSFWX7CWM6ZGR',
+  secretAccessKey: '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',
+  region: 'eu-central-1',
+});
 
-  return {
-    text: stringData, 
+const ses = new AWS.SES({  region: 'eu-central-1'  });
+
+export async function sendEmail(formData) {
+
+  const params = {
+    Destination: {
+      ToAddresses: ['marcinwojtczak.pure@gmail.com'], // Replace with recipient's email address
+    },
+    Message: {
+      Body: {
+        Text: { Data: formData.message },
+      },
+        Subject: { Data: formData.subject },
+      },
+    Source: 'marcinwojtczak.pure@gmail.com', // Replace with sender's email address
   };
-}
-
-export async function POST(req, res) {
-  const data = await req.json()
 
   try {
-    await transporter.sendMail({
-      ...mailOptions,
-      ...generateEmailContent(data),
-      subject: data.subject,
-      
-    });
-    } catch(error) {
-      console.log(error)
-      
-    } 
-  
-  return res.status(400).json({ message: "Bad request"})
+      await ses.sendEmail(params).promise();
+      console.log('Email sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
 }
-
-
-
-
-
-
-
-
-

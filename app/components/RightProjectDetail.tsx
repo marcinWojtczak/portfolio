@@ -11,7 +11,8 @@ interface RightProjectDetailProps {
   subtitle: string;
   description: string;
   tech: string[];
-  link: string;
+  githubLink: string;
+  vercelLink: string;
 }
 
 const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
@@ -20,7 +21,8 @@ const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
   subtitle, 
   description, 
   tech, 
-  link
+  githubLink,
+  vercelLink
 }) => {
 
   const [isHover, setIsHover] = useState(false)
@@ -68,10 +70,10 @@ const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
           <p className='bg-[#233a5e] p-4 shadow-[3px_3px_10px_5px_#1a202c]'>{description}</p>
           <h6>{tech.join(', ')}</h6>
           <div className="flex gap-2">
-            <Link href={link} target='_blank'>
+            <Link href={githubLink} target='_blank'>
               <FiGithub style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '18px'}}/>
             </Link>
-            <Link href=''>
+            <Link href={vercelLink} target='_blank'>
               <FiExternalLink style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '18px'}} />
             </Link>
           </div>

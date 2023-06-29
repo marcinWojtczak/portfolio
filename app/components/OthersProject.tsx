@@ -7,14 +7,14 @@ interface OthersProjectProps {
   title: string;
   description: string;
   tech: string[];
-  link: string;
+  githubLink: string;
 }
 
 const OthersProject: React.FC<OthersProjectProps> = ({
   title, 
   description, 
   tech, 
-  link
+  githubLink
 }) => {
   const [isHover, setIsHover] = useState(false)
 
@@ -25,7 +25,7 @@ const OthersProject: React.FC<OthersProjectProps> = ({
     >
       <div className='flex justify-between items-center'>
         <FiFolder style={{ fontSize: '26px', color: '#00DDFF'}}/>
-        <Link href='' target='_blank'>
+        <Link href={githubLink} target='_blank'>
           <FiGithub style={{ color: '#D9E1ED'}}/>
         </Link>
       </div>
