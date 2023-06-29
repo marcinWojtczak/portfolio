@@ -13,6 +13,7 @@
     "@types/nodemailer": "^6.4.8",
     "autoprefixer": "10.4.14",
     "aws-sdk": "^2.1407.0",
+    "dotenv": "^16.3.1",
     "framer-motion": "^10.12.16",
     "next": "13.4.4",
     "postcss": "8.4.24",
