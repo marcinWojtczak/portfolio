@@ -8,8 +8,8 @@ const CONTACT_MESSAGE_FIELDS = {
 }
 
 AWS.config.update({
-  accessKeyId: 'AKIA3EJLSFWX7CWM6ZGR',
-  secretAccessKey: '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',
+  accessKeyId: process.env.AWS_ACCES_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
   region: 'eu-central-1',
 });
 
