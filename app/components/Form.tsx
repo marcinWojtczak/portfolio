@@ -33,8 +33,8 @@ const Form = () => {
     setIsSubmit(true)
 
     AWS.config.update({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      accessKeyId: 'IWZ/bNrCRfVAxdn+9bW5LKede8+P/3Vk1PaCzuIM',
+      secretAccessKey: 'AKIA3EJLSFWX7CWM6ZGR',
       region: 'eu-central-1',
     });
 
@@ -42,7 +42,7 @@ const Form = () => {
 
     const params = {
     Destination: {
-      ToAddresses: [process.env.EMAIL], 
+      ToAddresses: ['marcinwojtczak.pure@gmail.com'], 
     },
     Message: {
       Body: {
@@ -50,7 +50,7 @@ const Form = () => {
       },
         Subject: { Data: formData.subject },
       },
-    Source: process.env.EMAIL, 
+    Source: 'marcinwojtczak.pure@gmail.com', 
   };
 
   try {
