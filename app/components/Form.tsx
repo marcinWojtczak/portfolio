@@ -1,6 +1,5 @@
 'use Client';
 import React, { useState, FormEvent, ChangeEvent  } from 'react';
-// import { sendContactForm } from '../../lib/api';
 import AWS from 'aws-sdk'
 import { sendEmail } from '../api/contact/route'
 
