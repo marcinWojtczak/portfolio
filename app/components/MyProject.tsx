@@ -102,7 +102,7 @@ const MyProject: React.FC = () => {
         />
         <OthersProject 
           title='Exercise-note'
-          description='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id voluptates non nesciunt in laboriosam dolore esse iusto sunt quidem minima, doloribus quis nulla sapiente debitis.'
+          description='Aplikacja treningowa w której można łatwo wprowadzić dane dotyczące używanego obciążenia, liczby wykonanych serii oraz ilości powtórze. Aplikacja umożliwia również tworzenie notatek związanych z treningiem'
           githubLink='https://github.com/marcinWojtczak/exercise-note'
           tech={['JavaScript', 'TypeScriot', 'Css']}
         />

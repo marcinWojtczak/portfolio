@@ -50,7 +50,7 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
         onMouseLeave={() => setIsHover(false)}
       >
         {!isHover ? (
-          <div className='w-full h-full flex flex-col gap-4 bg-[#17899b] p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] z-100 order-2'>
+          <div className='w-full h-full flex flex-col gap-4 bg-[#17899b] p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] order-2'>
             <div className='basis-1/4 flex flex-col xl:items-center gap-2'>
               <h4>{title}</h4>
               <p>{subtitle}</p>
@@ -64,7 +64,7 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
             />
           </div>
         ) : (
-          <div className='w-full h-full flex flex-col gap-4 p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] z-100 order-2'>
+          <div className='w-full h-full flex flex-col gap-4 p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c] order-2'>
             <div className='basis-1/4 flex flex-col xl:items-center gap-2'>
               <h4>{title}</h4>
               <p>{subtitle}</p>

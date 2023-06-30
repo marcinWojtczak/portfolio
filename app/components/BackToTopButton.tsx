@@ -30,7 +30,7 @@ const BackToTopButton = () => {
       {backToTop && (
         <Link href='/'>
           <BsArrowUpSquare 
-            className='fixed bottom-[50px] right-20'
+            className='hidden xl:block fixed bottom-[50px] right-20'
             style={{ fontSize: '50px', background: '#fff', borderWidth: '2px', borderColor: '#17899b', borderRadius: '4px',  color: '#212F45'}}/>
         </Link>
       )}
