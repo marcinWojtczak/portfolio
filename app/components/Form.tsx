@@ -2,6 +2,7 @@
 import React, { useState, FormEvent, ChangeEvent  } from 'react';
 import AWS from 'aws-sdk'
 
+
 const Form = () => {
 
   const [isSubmit, setIsSubmit] = useState(false);
@@ -33,10 +34,18 @@ const Form = () => {
     setIsSubmit(true)
 
     AWS.config.update({
-      accessKeyId: process.env.AWS_SECRET_ACCESS_KEY,
-      secretAccessKey: process.env.AWS_ACCESS_KEY_ID,
+      apiVersion: 'latest',
+      accessKeyId: 'AKIA3EJLSFWX7CWM6ZGR',
+      secretAccessKey: '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',
       region: 'eu-central-1',
     });
+
+    // AWS.config.update({
+    //   apiVersion: 'latest',
+    //   accessKeyId: 'AKIA3EJLSFWX7CWM6ZGR',
+    //   secretAccessKey: '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',
+    //   region: 'eu-central-1',
+    // });
 
     const ses = new AWS.SES({  region: 'eu-central-1'  });
 
