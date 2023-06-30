@@ -5,6 +5,7 @@ import { motion, useAnimation, useInView, } from 'framer-motion';
 import myImg from '../../public/myImg.png'
 
 
+
 const About: React.FC = () => {
   
   const [isHover, setIsHover] = useState(false);

@@ -9,6 +9,7 @@ import { StaticImageData } from 'next/image';
 import React,{ useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView, } from 'framer-motion';
 
+
 interface Props {
   title: string;
   backgroundImg: StaticImageData;
