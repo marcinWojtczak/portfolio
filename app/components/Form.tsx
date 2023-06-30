@@ -1,11 +1,14 @@
 'use Client';
-import React, { useState, FormEvent, ChangeEvent  } from 'react';
-import AWS from 'aws-sdk'
+import React, { useState, FormEvent, ChangeEvent } from 'react';
+import { motion } from 'framer-motion';
+import AWS from 'aws-sdk';
+
 
 
 const Form = () => {
 
   const [isSubmit, setIsSubmit] = useState(false);
+  const [message, setMessage] = useState('')
 
   const [formData, setFormData] = useState<{
     name: string,
@@ -31,6 +34,7 @@ const Form = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setMessage('Dziekuję za skorzystanie z formularza. Twoja wiadomość została wysłana.')
     setIsSubmit(true)
 
     AWS.config.update({
@@ -63,14 +67,15 @@ const Form = () => {
     }
   }
 
+
   return (
     <>
       { !isSubmit ? (
-        <form
-          onSubmit={handleSubmit}
-          method="POST"
-          className='py-10 flex flex-col items-center basis-1/2'
-        >
+      <form
+        onSubmit={handleSubmit}
+        method="POST"
+        className='py-10 flex flex-col items-center basis-1/2'
+      >
         <input 
           type='text' 
           name='name' 
@@ -116,8 +121,8 @@ const Form = () => {
         </div>
       </form>
       ) : (
-        <div className='flex items-center justify-center text-center'>
-          <h6>Dziekuję za skorzystanie z formularza. Twoja wiadomość została wyslana.</h6>
+        <div className='flex items-center justify-center text-center border border-[#233a5e] rounded-sm outline-0 bg-[#212F45] my-10 p-4 min-h-[200px]'>
+          <h5 className='text-[#ececec]'>{message}</h5>
         </div>
       )}
     </>

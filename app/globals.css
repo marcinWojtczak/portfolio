@@ -16,7 +16,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-4xl lg:text-5xl font-poppins font-bold text-[#D9E1ED]
+    @apply text-4xl lg:text-5xl font-poppins font-bold text-[#ececec]
   }
 
   h2 {
