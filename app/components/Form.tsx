@@ -1,7 +1,7 @@
 'use Client';
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
-import AWS from 'aws-sdk';
+import { sendContactForm } from '../lib/api';
 
 
 
@@ -14,7 +14,8 @@ const Form = () => {
     name: string,
     email: string,
     subject: string,
-    message: string
+    message: string,
+    
   }>({
     name: '',
     email: '',
@@ -32,47 +33,23 @@ const Form = () => {
     })
   }
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setMessage('Dziekuję za skorzystanie z formularza. Twoja wiadomość została wysłana.')
-    setIsSubmit(true)
-
-    AWS.config.update({
-      apiVersion: 'latest',
-      accessKeyId: 'AKIA3EJLSFWX7CWM6ZGR',
-      secretAccessKey: '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',
-      region: 'eu-central-1',
+  const onSubmit = async(e: FormEvent<HTMLFormElement>) => {
+    setFormData(prevFormData => {
+      return {
+        ...formData, 
+      }
     });
-
-    const ses = new AWS.SES({  region: 'eu-central-1'  });
-
-    const params = {
-    Destination: {
-      ToAddresses: ['marcinwojtczak.pure@gmail.com'], 
-    },
-    Message: {
-      Body: {
-        Text: { Data: formData.message },
-      },
-        Subject: { Data: formData.subject },
-      },
-    Source: 'marcinwojtczak.pure@gmail.com', 
-  };
-
-  try {
-      await ses.sendEmail(params).promise();
-      console.log('Email sent successfully!');
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
+    
+    await sendContactForm(formData);
+    setIsSubmit(true)
+    setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
   }
-
 
   return (
     <>
       { !isSubmit ? (
       <form
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
         method="POST"
         className='py-10 flex flex-col items-center basis-1/2'
       >
