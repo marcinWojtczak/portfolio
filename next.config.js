@@ -2,7 +2,7 @@
 const nextConfig = {
   images: { unoptimized: true },
   // output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
-  // output: 'standalone',
+  output: 'export',
 }
 
 module.exports = nextConfig
