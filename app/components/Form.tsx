@@ -40,9 +40,13 @@ const Form = () => {
       }
     });
     
-    await sendContactForm(formData);
-    setIsSubmit(true)
-    setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
+    try {
+      await sendContactForm(formData);
+      setIsSubmit(true)
+      setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
+    } catch (error) {
+      error:error.message
+    }
   }
 
   return (

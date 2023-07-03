@@ -23,13 +23,13 @@ export async function POST(request: Request){
       ...mailOptions, 
       ...generateEmailContent(body),
     })
-    return NextResponse.json({ success: true})
+    return new NextResponse()
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: error.message})
+    return new NextResponse()
   }
 
-  NextResponse.json({message: 'Bad request'});
+  return new NextResponse();
 };
 
 
