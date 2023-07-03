@@ -54,7 +54,7 @@ const Form = () => {
       { !isSubmit ? (
       <form
         onSubmit={onSubmit}
-        action='http://formspree.io/marcinwojtczak.pure@gmail.com'
+        action='https://formspree.io/f/meqbjwyz'
         method="POST"
         className='py-10 flex flex-col items-center basis-1/2'
       >
