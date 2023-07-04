@@ -45,7 +45,7 @@ const Form = () => {
       setIsSubmit(true)
       setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
     } catch (error) {
-      error:error.message,
+      error:error.message
     }
   }
 
