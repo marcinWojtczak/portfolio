@@ -2,7 +2,6 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { sendContactForm } from '../lib/api';
-import { useForm, ValidationError } from '@formspree/react';
 
 
 
@@ -10,8 +9,6 @@ const Form = () => {
 
   const [isSubmit, setIsSubmit] = useState(false);
   const [message, setMessage] = useState('')
-  const [state, handleSubmit] = useForm('meqbjwyz')
-
 
   const [formData, setFormData] = useState<{
     name: string,
@@ -26,6 +23,7 @@ const Form = () => {
     message: ''
   }) 
   
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prevFormData => {
       return {
@@ -47,7 +45,7 @@ const Form = () => {
       setIsSubmit(true)
       setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
     } catch (error) {
-      error:error.message
+      error:error.message,
     }
   }
 
@@ -55,8 +53,7 @@ const Form = () => {
     <>
       { !isSubmit ? (
       <form
-        onSubmit={handleSubmit}
-        action='https://formspree.io/f/meqbjwyz'
+        onSubmit={onSubmit}
         method="POST"
         className='py-10 flex flex-col items-center basis-1/2'
       >
