@@ -78,7 +78,7 @@ const MyProject: React.FC = () => {
           description='Aplikacja dostarcza użytkownikom aktualne dane z rynku kryptowalut. Wyświetla aktualne cen, dostarcza również użytkownikom szczegółowe informacje na temat poszczególnych kryptowalut oraz wykresy cen dla wybranych kryptowalut, umożliwiając użytkownikom analizę zmian cen w różnych okresach czasu'
           tech={['JavaScript', 'React Js', 'CSS',]}
           githubLink='https://github.com/marcinWojtczak/cryptocurrency-website'
-          vercelLink='https://portfolio-sage-tau-31.vercel.app/'
+          vercelLink='https://cryptocurrency-app-blue.vercel.app/'
 
         />
       </div>
