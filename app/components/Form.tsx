@@ -2,6 +2,7 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { sendContactForm } from '../lib/api';
+import { useForm, ValidationError } from '@formspree/react';
 
 
 
@@ -9,6 +10,8 @@ const Form = () => {
 
   const [isSubmit, setIsSubmit] = useState(false);
   const [message, setMessage] = useState('')
+  const [state, handleSubmit] = useForm('meqbjwyz')
+
 
   const [formData, setFormData] = useState<{
     name: string,
@@ -23,7 +26,6 @@ const Form = () => {
     message: ''
   }) 
   
-
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prevFormData => {
       return {
@@ -53,7 +55,7 @@ const Form = () => {
     <>
       { !isSubmit ? (
       <form
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
         action='https://formspree.io/f/meqbjwyz'
         method="POST"
         className='py-10 flex flex-col items-center basis-1/2'
