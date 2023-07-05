@@ -5,7 +5,7 @@ import { sendContactForm } from '../lib/api';
 
 
 
-const Form = () => {
+const Form: React.FC = () => {
 
   const [isSubmit, setIsSubmit] = useState(false);
   const [message, setMessage] = useState('')
