@@ -12,7 +12,7 @@ interface LeftProjectDetailProps {
   description: string;
   tech: string[];
   githubLink: string;
-  vercelLink: string;
+  
 }
 
 const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
@@ -22,7 +22,7 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
   description, 
   tech, 
   githubLink,
-  vercelLink,
+
 }) => {
 
   const [isHover, setIsHover] = useState(false)
@@ -39,9 +39,7 @@ const LeftProjectDetail: React.FC<LeftProjectDetailProps> = ({
             <Link href={githubLink} target='_blank'>
               <FiGithub style={{ textAlign: 'right', color: '#D9E1ED', fontSize: '18px'}}/>
             </Link>
-            <Link href={vercelLink} target='_blank'>
-              <FiExternalLink style={{ color: '#D9E1ED', fontSize: '18px'}} />
-            </Link>
+            
           </div>
         </div>
       </div>

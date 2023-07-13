@@ -69,7 +69,6 @@ const MyProject: React.FC = () => {
           description='Aplikacja oferuje kilka funkcjonalności takich jak: rejestracja konta użytkownika, tworzenie, edycja i usuwanie postów, dodawanie komentarzy. Aplikacja umożliwia również dodawanie filmów do postów oraz wyszukiwania postów na podstawie tytułu lub zawartości.'
           tech={['Django', 'Python', 'PostgreSQl', 'Bootstrap']}
           githubLink='https://github.com/marcinWojtczak/django-nbablog'
-          
         />
         <RightProjectDetail 
           title='Crypto App'
