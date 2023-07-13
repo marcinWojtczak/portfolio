@@ -13,7 +13,7 @@
     "@sendgrid/mail": "^7.7.0",
     "@types/nodemailer": "^6.4.8",
     "autoprefixer": "10.4.14",
-    "aws-sdk": "^2.1407.0",
+    "aws-sdk": "^2.1415.0",
     "dotenv": "^16.3.1",
     "framer-motion": "^10.12.16",
     "next": "13.4.4",
@@ -24,7 +24,8 @@
     "react-hook-form": "^7.45.1",
     "react-icons": "^4.9.0",
     "react-intersection-observer": "^9.4.4",
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.2",
+    "vercel-email": "^0.0.6"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
