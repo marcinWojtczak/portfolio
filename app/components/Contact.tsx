@@ -1,4 +1,4 @@
-r"use client"
+"use client"
 import React, { useEffect, useRef  } from 'react';
 import { FaPhone } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
