@@ -20,7 +20,7 @@ const Menu: React.FC = () => {
       </div>
       <div className='flex items-center justify-center px-8 py-2 border-2 border-[#17899b] hover:bg-[#17899b] gap-2 rounded-sm shadow-xl'>
         <button className='text-[#D9E1ED] font-mono'>
-          <h6>Moje CV</h6>
+          <h6><a href="/CV.pdf" download="cv">Moje CV</a></h6>
         </button>
         <FaFileDownload size={'20px'} color={'D9E1ED'}/>
       </div>
