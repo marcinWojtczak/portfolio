@@ -32,7 +32,6 @@ const Form: React.FC = () => {
     })
   }
 
-  // Example usage
   const onSubmit = async (event) => {
     event.preventDefault();
     setFormData(prevFormData => {
@@ -55,10 +54,8 @@ const Form: React.FC = () => {
       console.log('Email sent successfully!');
       setIsSubmit(true)
       setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
-      // Perform any additional actions after successful email sending
     } catch (error) {
       console.error('Error sending email:', error);
-      // Handle error case
     }
   };
 
