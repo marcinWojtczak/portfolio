@@ -2,8 +2,7 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { sendContactForm } from '../lib/api';
-
-
+import { sendEmail } from './Email';
 
 const Form: React.FC = () => {
 
@@ -33,21 +32,45 @@ const Form: React.FC = () => {
     })
   }
 
-  const onSubmit = async(e: FormEvent<HTMLFormElement>) => {
-    setFormData(prevFormData => {
-      return {
-        ...formData, 
-      }
-    });
+  // const onSubmit = async(e: FormEvent<HTMLFormElement>) => {
+  //   setFormData(prevFormData => {
+  //     return {
+  //       ...formData, 
+  //     }
+  //   });
     
+  //   try {
+  //     await sendContactForm(formData);
+  //     setIsSubmit(true)
+  //     setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
+  //   } catch (error) {
+  //     error:error.message
+  //   }
+  // }
+
+
+  // Example usage
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    // Process form data and prepare email details
+    const emailDetails = {
+      to: 'marcinwojtczak.pure@gmail.com',
+      from: 'marcinwojtczak.pure@gmail.com',
+      subject: formData.subject,
+      message: formData.message,
+      email: formData.email,
+    };
+
     try {
-      await sendContactForm(formData);
-      setIsSubmit(true)
-      setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
+      await sendEmail(emailDetails);
+      console.log('Email sent successfully!');
+      // Perform any additional actions after successful email sending
     } catch (error) {
-      error:error.message
+      console.error('Error sending email:', error);
+      // Handle error case
     }
-  }
+  };
 
   return (
     <>
