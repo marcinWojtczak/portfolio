@@ -10,7 +10,7 @@ const ses = new AWS.SES({ apiVersion: 'latest' });
 
 
 
-export async function sendEmail({ to, from, subject, message, email }) {
+export async function sendEmail({ to, from, subject, message, email}) {
   const params = {
     Source: from,
     Destination: { ToAddresses: [to] },

@@ -2,7 +2,7 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { sendContactForm } from '../lib/api';
-import { sendEmail } from './Email';
+import { sendEmail } from '../pages/api/sendEmail';
 
 const Form: React.FC = () => {
 
@@ -32,26 +32,14 @@ const Form: React.FC = () => {
     })
   }
 
-  // const onSubmit = async(e: FormEvent<HTMLFormElement>) => {
-  //   setFormData(prevFormData => {
-  //     return {
-  //       ...formData, 
-  //     }
-  //   });
-    
-  //   try {
-  //     await sendContactForm(formData);
-  //     setIsSubmit(true)
-  //     setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
-  //   } catch (error) {
-  //     error:error.message
-  //   }
-  // }
-
-
   // Example usage
   const onSubmit = async (event) => {
     event.preventDefault();
+    setFormData(prevFormData => {
+      return {
+        ...formData, 
+      }
+    });
 
     // Process form data and prepare email details
     const emailDetails = {
@@ -65,6 +53,8 @@ const Form: React.FC = () => {
     try {
       await sendEmail(emailDetails);
       console.log('Email sent successfully!');
+      setIsSubmit(true)
+      setMessage('Dziękuję za wypełnienie formularza kontaktowego. Twój mail został wysłany')
       // Perform any additional actions after successful email sending
     } catch (error) {
       console.error('Error sending email:', error);
