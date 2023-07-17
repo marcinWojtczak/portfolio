@@ -6,15 +6,15 @@ const Menu: React.FC = () => {
 
   return (
     <nav className='h-full w-full flex md:flex-row flex-col items-center justify-center gap-6'>
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-1'>
         <h6>01.</h6>
-        <Link href='#about'><p className='hover:text-[#D9E1ED]'>O mnie</p></Link>
+        <Link href='#about' ><p className='hover:text-[#D9E1ED]'>O mnie</p></Link>
       </div>
-      <div className='flex items-center'>
+      <div className='flex items-center gap-1'>
         <h6>02.</h6>
         <Link href='#projects'><p className='hover:text-[#D9E1ED]'>Moje Projekty</p></Link>
       </div>
-      <div className='flex items-center'>
+      <div className='flex items-center gap-1'>
         <h6>03.</h6>
         <Link href='#contact'><p className='hover:text-[#D9E1ED]'>Kontakt</p></Link>
       </div>

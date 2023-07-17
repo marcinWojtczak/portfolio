@@ -86,7 +86,7 @@ const About: React.FC = () => {
                 alt='marcin img'
                 width={464}
                 height={597}
-                style={{objectFit: "cover", borderRadius: '6px'}}
+                style={{objectFit: "cover", borderRadius: '6px', width: '100%'}}
               />
               ) : (
               <Image 
@@ -94,7 +94,7 @@ const About: React.FC = () => {
                 alt='marcin img'
                 width={464}
                 height={597}
-                style={{objectFit: "cover", mixBlendMode: 'overlay', borderRadius: '6px', }}
+                style={{objectFit: "cover", mixBlendMode: 'overlay', borderRadius: '6px', width: '100%'}}
               />
               )
             }

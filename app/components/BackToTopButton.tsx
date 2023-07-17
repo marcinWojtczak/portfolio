@@ -1,12 +1,13 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { BsArrowUpSquare, BsArrowUpSquareFill } from 'react-icons/bs';
+import { BsArrowUpSquare } from 'react-icons/bs';
 import Link from "next/link";
 
 
 const BackToTopButton = () => {
 
   const [backToTop, setBackToTop] = useState(false)
+  console.log('button:', backToTop)
 
   useEffect(() =>{
     window.addEventListener('scroll', () => {
@@ -27,13 +28,14 @@ const BackToTopButton = () => {
 
   return (
     <>
-      {backToTop && (
-        <Link href='/'>
+      <Link href='/'>
+        { backToTop &&
           <BsArrowUpSquare 
-            className='hidden xl:block fixed bottom-[50px] right-20'
-            style={{ fontSize: '50px', background: '#fff', borderWidth: '2px', borderColor: '#17899b', borderRadius: '4px',  color: '#212F45'}}/>
-        </Link>
-      )}
+            className='hidden xl:inline fixed bottom-[50px] right-10 opacity-10 hover:opacity-100'
+            style={{ fontSize: '40px', color: '#00DDFF' }}
+          />
+        }
+      </Link>
     </>
   )
 }

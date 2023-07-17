@@ -49,7 +49,7 @@ const RightProjectDetail: React.FC<RightProjectDetailProps> = ({
           </div>
         ) : (
           <div className='w-full h-full flex flex-col gap-4 p-4 xl:p-10 shadow-[3px_3px_10px_5px_#1a202c]'>
-            <div className='basis-1/4 flex flex-col xl:items-center gap-2 opacity-100'>
+            <div className='basis-1/4 flex flex-col xl:items-center gap-2'>
               <h4>{title}</h4>
               <p>{subtitle}</p>
             </div>

@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import Menu from './Menu'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu } from "react-icons/hi"
 import { RiCloseFill } from "react-icons/ri"
 
