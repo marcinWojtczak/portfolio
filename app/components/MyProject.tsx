@@ -96,7 +96,7 @@ const MyProject: React.FC = () => {
         <OthersProject 
           title='Camper-rental'
           description='Strona internetowa wypożyczalni camperów to platforma, która umożliwia użytkownikom wynajem i rezerwację kamperów na różne okazje, takie jak podróże, wypady na kemping, festiwale czy wakacje rodzinne..'
-          githubLink='https://github.com/marcinWojtczak/camper-rental'
+          githubLink='https://github.com/marcinWojtczak/campers-rental'
           tech={['JavaScript', 'React Js']}
         />
         <OthersProject 
